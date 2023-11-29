@@ -1,0 +1,115 @@
+<%- include('../partials/header.ejs') %>
+<!-- Main Section -->
+<div id="main" class="container-fluid d-flex justify-content-center">
+    <%- include('../partials/alert.ejs') %>
+	<div id="newEventContent">
+		<!-- New Event Form -->
+		<form action="/events/" method="POST">
+			<!-- Title -->
+			<div class="form-group">
+				<label class="text-white" for="title">Title</label>
+				<input
+					class="form-control"
+					type="text"
+					name="title"
+					id="title"
+					required
+				/>
+			</div>
+
+			<!-- Category -->
+			<div class="form-group">
+				<label class="text-white" for="category">Category</label>
+				<select
+					class="form-control"
+					id="category"
+					name="category"
+					required
+				>
+					<option value="" disabled selected hidden>
+						Choose a Game
+					</option>
+					<option value="CS:GO">CS:GO</option>
+					<option value="DOTA 2">DOTA 2</option>
+					<option value="Valorant">Valorant</option>
+					<option value="Fortnite">Fortnite</option>
+					<option value="Call of Duty: Modern Warfare 2">
+						Call of Duty: MW2
+					</option>
+				</select>
+			</div>
+
+			<!-- Details -->
+			<div class="form-group">
+				<label class="text-white" for="details"> Details </label>
+				<input
+					class="form-control"
+					type="text"
+					name="details"
+					id="details"
+					minlength="10"
+					required
+				/>
+			</div>
+
+			<!-- Location -->
+			<div class="form-group">
+				<label class="text-white" for="location"> Location </label>
+				<input
+					class="form-control"
+					type="text"
+					name="location"
+					id="location"
+					required
+				/>
+			</div>
+
+			<!-- Start Time -->
+			<div class="form-group">
+				<label class="text-white" for="startTime">
+					Start Time and Date
+				</label>
+				<input
+					class="form-control"
+					type="datetime-local"
+					id="startTime"
+					name="startTime"
+					required
+				/>
+			</div>
+
+			<!-- End Time -->
+			<div class="form-group">
+				<label class="text-white" for="endTime">
+					End Time and Date
+				</label>
+				<input
+					class="form-control"
+					type="datetime-local"
+					id="endTime"
+					name="endTime"
+					required
+				/>
+			</div>
+
+			<!-- Image -->
+			<div class="form-group">
+				<label class="text-white" for="imagePath"> Image </label>
+				<input
+					class="form-control"
+					type="file"
+					id="imagePath"
+					name="imagePath"
+					accept="image/*"
+					required
+				/>
+			</div>
+			<div class="form-group">
+				<button id="submitButton" type="submit" class="btn btn-success">
+					Submit
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+<%- include('../partials/footer.ejs') %>

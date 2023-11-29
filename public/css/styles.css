@@ -1,0 +1,126 @@
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
+
+.mainContainer {
+	display: flex;
+	flex-flow: column;
+	height: 100%;
+}
+
+#logo {
+	height: 45px;
+	padding-left: 15px;
+}
+
+#userNav {
+	background-color: #e74e35;
+}
+
+#generalNav {
+	background-color: #e74e35;
+	border-top: 1px solid whitesmoke;
+}
+
+#navigationDividerContainer {
+	background-color: #e74e35;
+}
+
+#main {
+	height: 100%;
+	background-color: rgb(39, 39, 39);
+	overflow-y: auto;
+}
+
+#eventsContent {
+	width: 65%;
+	height: 85%;
+}
+
+#eventsContent a {
+	color: white;
+}
+
+#eventsContent a:hover {
+	color: #e74e35;
+}
+
+#newEventContent {
+	width: 60%;
+	height: 80%;
+	padding-top: 25px;
+}
+
+#footer {
+	background-color: #e74e35;
+}
+
+#description {
+	height: 100px;
+}
+
+#submitButton {
+	width: 100%;
+}
+
+#eventImage {
+	width: 200px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.form-group {
+	padding-top: 15px;
+}
+
+.nav-item {
+	font-size: 15px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.nav-link {
+	color: white !important;
+}
+
+.success {
+	background: rgba(108, 192, 112, 0.7);
+	color: #fff;
+	width: 100%;
+	margin: 0 auto 1rem auto;
+	text-align: center;
+	padding: 0.5rem 0;
+	justify-content: center;
+}
+
+.error {
+	background-color: #e74e35;
+	color: #fff;
+	width: 100%;
+	margin: 0 auto 1rem auto;
+	text-align: center;
+	padding: 0.5rem 0;
+	justify-content: center;
+}
+
+#loginSignupContent {
+	width: 30%;
+	height: 70%;
+	padding-top: 25px;
+	justify-content: center;
+	align-self: center;
+}
+
+#profile {
+	width: 100%;
+}
+
+#profileAlert {
+	width: 80%;
+	position: absolute;
+	align-self: center;
+	justify-self: center;
+	top: 30%;
+}

@@ -1,0 +1,14 @@
+<!-- Error File -->
+<%- include('./partials/header.ejs') %>
+<body>
+	<div
+		class="container-fluid d-flex align-items-center justify-content-center"
+		id="main"
+	>
+		<div>
+			<h1 class="text-white"><%= error.status %> Error</h1>
+			<p class="text-white"><%= error.message %></p>
+		</div>
+	</div>
+</body>
+<%- include('./partials/footer.ejs') %>

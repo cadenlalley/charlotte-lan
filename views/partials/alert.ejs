@@ -1,0 +1,10 @@
+<% if (errorMessages.length > 0) { %> <% errorMessages.forEach((message) => { %>
+<div class="error fade show" role="alert" data-color="danger">
+	<p class="text-white"><strong><%= message %></strong></p>
+</div>
+<% }); %> <% } %> <% if (successMessages.length > 0) { %> <%
+successMessages.forEach((message) => { %>
+<div class="success fade show" role="alert" data-color="danger">
+	<p class="text-white"><strong><%= message %></strong></p>
+</div>
+<% }); %> <% } %>

@@ -1,0 +1,29 @@
+<%- include('../partials/header.ejs') %>
+<!-- Main Section -->
+<div
+	id="main"
+	class="container-fluid d-flex align-items-center justify-content-center"
+>
+<%- include('../partials/alert.ejs') %>
+	<div id="eventsContent">
+		<% if (events.length === 0) { %>
+
+		<h2 class="text-white">There are no events to display!</h2>
+
+		<% } else { %> 
+            <% categories.forEach(category => { %>
+		        <h2 class="text-white"><%= category %></h2>
+                <% events.forEach(event => { %>
+                    <% if (event.category === category) { %>
+                        <a href="/events/<%= event.id %>" class="ms-xxl-5"><%= event.title %></a>
+		                <br />
+                    <% } %>
+                <% }); %>
+                <br />
+                <br />
+                <br />
+		    <% }); %> 
+        <% } %>
+    </div>
+</div>
+<%- include('../partials/footer.ejs') %>

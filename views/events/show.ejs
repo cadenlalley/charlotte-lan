@@ -1,0 +1,74 @@
+<!-- Main Section -->
+<%- include('../partials/header.ejs') %>
+<div
+	id="main"
+	class="container-fluid d-flex align-items-center justify-content-center"
+>
+<%- include('../partials/alert.ejs') %>
+	<div>
+		<!-- Title -->
+		<h1 class="text-white"><%= event.title %></h1>
+
+		<!-- Image -->
+		<img
+			id="eventImage"
+			src="/images/<%= event.imagePath %>"
+			alt="<%= event.title %> Image"
+		/>
+
+		<!-- Host -->
+		<h4 class="text-white">Event Host:</h3>
+		<p class="text-white"><%= event.host.firstName + ' ' + event.host.lastName %></p>
+
+		<!-- Start & End Times -->
+		<h4 class="text-white">Start & End Time</h2>
+		<p class="text-white">Start: <%= event.startTime %></p>
+		<p class="text-white">End: <%= event.endTime %></p>
+
+		<!-- Location -->
+		<h4 class="text-white">Location</h2>
+		<p class="text-white"><%= event.location %></p>
+
+		<!-- Details -->
+		<h4 class="text-white">Details</h2>
+		<p class="text-white"><%= event.details %></p>
+
+        <!-- Total RSVPs -->
+        <h4 class="text-white">Total RSVPs</h2>
+        <p class="text-white"><%= rsvpCount %></p>
+
+        <% if (user != event.host._id) { %>
+            <h4 class="text-white">RSVP:</h2>
+            <form action="/events/<%= event._id %>/rsvp" method="POST"> 
+                <input
+                    class="btn btn-success"
+                    name="submit"
+                    type="submit"
+                    value="YES"
+                >
+                    
+                </input>
+            
+            
+                <input
+                    class="btn btn-warning"
+                    name="submit"
+                    type="submit"
+                    value="MAYBE"
+                >
+                    
+                </input>
+            
+                <input
+                    class="btn btn-danger"
+                    name="submit"
+                    type="submit"
+                    value="NO"
+                >
+                    
+                </input>
+            </form>
+            <% } %>
+	</div>
+</div>
+<%- include('../partials/footer.ejs') %>

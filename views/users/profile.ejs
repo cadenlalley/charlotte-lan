@@ -1,0 +1,90 @@
+<!-- Main Section -->
+<%- include('../partials/header.ejs') %>
+<div id="profileAlert"><%- include('../partials/alert.ejs') %></div>
+<div
+	id="main"
+	class="container-fluid d-flex align-items-center justify-content-center"
+>
+	<div id="profile">
+		<h1 class="text-white" align="center">My Events</h1>
+		<% if (events.length) { %>
+		<table class="table">
+			<thead class="text-white">
+				<tr>
+					<th scope="col">Event Title</th>
+					<th scope="col">Edit / Delete</th>
+				</tr>
+			</thead>
+			<tbody class="text-white">
+				<% events.forEach(event => { %>
+				<tr>
+					<th scope="row">
+						<a href="/events/<%= event.id %>" class="text-white"
+							><%= event.title %></a
+						>
+					</th>
+					<td>
+						<!-- Edit Button -->
+						<form>
+							<button
+								class="btn btn-warning"
+								value="edit"
+								formaction="/events/<%= event.id %>/edit"
+								formmethod="GET"
+							>
+								Edit
+							</button>
+
+							<!-- Delete Button -->
+
+							<button
+								class="btn btn-danger"
+								value="delete"
+								formmethod="POST"
+								formaction="/events/<%= event.id %>?_method=DELETE"
+							>
+								Delete
+							</button>
+						</form>
+					</td>
+				</tr>
+				<% }) %>
+			</tbody>
+		</table>
+
+		<% } else { %>
+		<h1 class="text-white" align="center">
+			You have not created any events.
+		</h1>
+		<% } %>
+
+		<% if (rsvp.length) { %>
+            <table class="table">
+                <thead class="text-white">
+                    <tr>
+                        <th scope="col">Event Title</th>
+                        <th scope="col">RSVP Status</th>
+                    </tr>
+                </thead>
+                <tbody class="text-white">
+                    <% rsvp.forEach(rsvp => { %>
+                    <tr>
+                        <th scope="row">
+                            
+                        </th>
+                        <td>
+                           <%= rsvp.status %>
+                        </td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+            <% } else { %>
+                <h1 class="text-white" align="center">
+                    You have not RSVPed to any events.
+                </h1>
+                <% } %>
+    
+	</div>
+</div>
+<%- include('../partials/footer.ejs') %>
