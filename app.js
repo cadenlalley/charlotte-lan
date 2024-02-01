@@ -6,6 +6,7 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
+const helmet = require('helmet');
 
 const mainRoutes = require('./routes/mainRoutes');
 const eventRoutes = require('./routes/eventsRoutes');
@@ -59,6 +60,16 @@ app.use((req, res, next) => {
 });
 
 // Extras
+app.use(helmet({
+    directives: {
+        defaultSrc: ["'self'", "charlottelan.clalley.dev"],
+        styleSrc: ["'self'", 'maxcdn.bootstrapcdn.com', 'fonts.googleapis.com'],
+        fontSrc: ["'self'", 'cdnjs.cloudflare.com'],
+        scriptSrc: ["'self'", 'code.jquery.com'],
+        imgSrc: ["'self'", 'data:'],
+        connectSrc: ["'self'", "charlottelan.clalley.dev"]
+    }
+}));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan('tiny'));

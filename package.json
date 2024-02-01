@@ -4,11 +4,13 @@
 	"description": "Project created for the ITIS 4166 class at the University of North Carolina at Charlotte",
 	"main": "app.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "webpack"
 	},
 	"author": "Caden Lalley",
 	"license": "ISC",
 	"dependencies": {
+		"aws-sdk": "^2.1547.0",
 		"bcrypt": "^5.1.0",
 		"connect-flash": "^0.1.1",
 		"connect-mongo": "^5.0.0",
@@ -18,10 +20,18 @@
 		"express-rate-limit": "^6.7.0",
 		"express-session": "^1.17.3",
 		"express-validator": "^7.0.1",
+		"helmet": "^7.1.0",
+		"mapbox": "^1.0.0-beta10",
+		"mapbox-gl": "^3.1.2",
 		"method-override": "^3.0.0",
+		"mock-aws-s3": "^4.0.2",
 		"mongodb": "^5.1.0",
 		"mongoose": "^7.0.3",
 		"morgan": "^1.10.0",
+		"nock": "^13.5.1",
 		"nodemon": "^2.0.20"
+	},
+	"devDependencies": {
+		"webpack-cli": "^5.1.4"
 	}
 }
