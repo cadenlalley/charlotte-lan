@@ -5,6 +5,4 @@ node_modules/
 .env
 .env/
 
-/dist
-webpack.config.js
-
+docker-compose.yml
