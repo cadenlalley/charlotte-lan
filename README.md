@@ -5,7 +5,7 @@ Charlotte LAN was created in the Network Based Application Development course by
 [Caden Lalley](https://github.com/cadenlalley)
 
 ## Demo
-(Work in progress)
+https://charlotte-lan.clalley.dev
 
 ## Prerequisites
 * NodeJS (<a href="https://nodejs.org/en/download/package-manager" target="_blank">Installation Guide</a>)
